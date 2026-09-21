@@ -1,0 +1,33 @@
+{
+  "name": "skillseal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ONEST-compliant certification platform for corporate training programs",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run build -w @skillseal/shared && concurrently -n api,web -c cyan,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run dev -w @skillseal/api",
+    "dev:web": "npm run dev -w @skillseal/web",
+    "dev:shared": "npm run dev -w @skillseal/shared",
+    "build": "npm run build -w @skillseal/shared && npm run build -w @skillseal/api && npm run build -w @skillseal/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "db:generate": "npm run db:generate -w @skillseal/api",
+    "db:migrate": "npm run db:migrate -w @skillseal/api",
+    "db:seed": "npm run db:seed -w @skillseal/api",
+    "db:studio": "npm run db:studio -w @skillseal/api",
+    "db:reset": "npm run db:reset -w @skillseal/api",
+    "setup": "npm install && node scripts/setup-env.mjs && npm run build -w @skillseal/shared && npm run db:migrate && npm run db:seed",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}
