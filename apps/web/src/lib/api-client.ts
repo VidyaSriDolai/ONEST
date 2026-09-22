@@ -176,17 +176,12 @@ function looksLikeHtml(response: Response, body: string): boolean {
   return contentType.includes('text/html') || /^\s*<!doctype html/i.test(body.trimStart());
 }
 
-function looksLikeHost404(response: Response, payload: unknown): boolean {
+function looksLikeHost404(response: Response): boolean {
   // Vercel's not-found answer for /api/* paths with no serverless function
-  // behind them: its JSON shape is { error: { code: '404', ... } } — a string
-  // code, not the API's numeric enum — and it carries Vercel's error header.
-  const shape = payload as { error?: { code?: unknown } } | null;
-  return (
-    response.status === 404 &&
-    shape?.error !== undefined &&
-    String(shape.error.code) === '404' &&
-    response.headers.get('x-vercel-error') === 'NOT_FOUND'
-  );
+  // behind them. X-Vercel-Error is set only by the platform itself, never on
+  // responses from the API, and the body varies with the Accept header —
+  // text/plain by default, { error: { code: '404' } } for application/json.
+  return response.status === 404 && response.headers.get('x-vercel-error') === 'NOT_FOUND';
 }
 
 async function refreshSession(): Promise<boolean> {
@@ -244,19 +239,11 @@ export async function apiRequest<T>(path: string, options: RequestOptions = {}):
   }
 
   // A host that serves only the SPA (no serverless function behind /api/*)
-  // answers with its own JSON 404 — same detection path, different disguise.
-  if (response.status === 404) {
-    const clone = response.clone();
-    let hostNotFound = false;
-    try {
-      hostNotFound = looksLikeHost404(response, await clone.json());
-    } catch {
-      hostNotFound = false;
-    }
-    if (hostNotFound) {
-      await activateMockMode();
-      return mockDispatch<T>(method, path, body, Boolean(skipRefresh));
-    }
+  // answers with its own 404 — text/plain or JSON depending on the Accept
+  // header. Same fallback path, different disguise.
+  if (looksLikeHost404(response)) {
+    await activateMockMode();
+    return mockDispatch<T>(method, path, body, Boolean(skipRefresh));
   }
 
   // 401 with SESSION_EXPIRED means the access token aged out mid-session.
