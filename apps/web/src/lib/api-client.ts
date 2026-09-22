@@ -53,6 +53,18 @@ interface RequestOptions extends Omit<RequestInit, 'body'> {
   skipRefresh?: boolean;
 }
 
+/** The host's own not-found answer for /api/* routes that no function serves. */
+export class ApiRouteMissingError extends ApiError {
+  constructor() {
+    super(
+      404,
+      'INTERNAL_ERROR',
+      'The API route does not exist on this deployment.',
+    );
+    this.name = 'ApiRouteMissingError';
+  }
+}
+
 async function parse<T>(response: Response): Promise<T> {
   let payload: ApiResponse<T> | null = null;
   let raw = '';
@@ -73,6 +85,14 @@ async function parse<T>(response: Response): Promise<T> {
   }
 
   if (!payload.ok) {
+    // Vercel's own 404 for /api/* paths no function claims — not an API
+    // envelope ({ ok, error }), so it reaches this branch.
+    if (
+      response.status === 404 &&
+      (payload as { error?: { code?: string } }).error?.code === '404'
+    ) {
+      throw new ApiRouteMissingError();
+    }
     throw new ApiError(
       response.status,
       payload.error.code,
@@ -92,9 +112,10 @@ let refreshPromise: Promise<boolean> | null = null;
 
 /**
  * Mock fallback state. The deployed site currently has no API behind it, so
- * when a request gets the SPA's HTML back we flip into mock mode for the rest
- * of the tab session and serve demo data instead. The real API always wins:
- * if it comes back (VITE_API_BASE_URL set), the next hard reload uses it.
+ * when a request proves the API is missing — SPA HTML on a JSON route, or the
+ * host's own 404 for a functionless /api/* path — we flip into mock mode for
+ * the rest of the tab session and serve demo data instead. The real API always
+ * wins: if it comes back (VITE_API_BASE_URL set), the next hard reload uses it.
  * Seeded from sessionStorage (same key as mock-api's flag — duplicated here as
  * a literal so the 40 KB mock module stays lazily loaded) so a reload mid-demo
  * stays in demo mode instead of bouncing off the missing API again.
@@ -155,6 +176,19 @@ function looksLikeHtml(response: Response, body: string): boolean {
   return contentType.includes('text/html') || /^\s*<!doctype html/i.test(body.trimStart());
 }
 
+function looksLikeHost404(response: Response, payload: unknown): boolean {
+  // Vercel's not-found answer for /api/* paths with no serverless function
+  // behind them: its JSON shape is { error: { code: '404', ... } } — a string
+  // code, not the API's numeric enum — and it carries Vercel's error header.
+  const shape = payload as { error?: { code?: unknown } } | null;
+  return (
+    response.status === 404 &&
+    shape?.error !== undefined &&
+    String(shape.error.code) === '404' &&
+    response.headers.get('x-vercel-error') === 'NOT_FOUND'
+  );
+}
+
 async function refreshSession(): Promise<boolean> {
   refreshPromise ??= (async () => {
     try {
@@ -200,13 +234,29 @@ export async function apiRequest<T>(path: string, options: RequestOptions = {}):
 
   let response = await send();
 
-  // A static deploy with no API behind it answers JSON routes with the SPA's
-  // index.html. Detect that once, switch to mock mode, and replay the request
-  // against the in-browser demo backend.
+  // A static deploy with no API behind it answers JSON routes with either the
+  // SPA's index.html or the host's own 404. Detect that once, switch to mock
+  // mode, and replay the request against the in-browser demo backend.
   const contentType = response.headers.get('content-type') ?? '';
   if (contentType.includes('text/html')) {
     await activateMockMode();
     return mockDispatch<T>(method, path, body, Boolean(skipRefresh));
+  }
+
+  // A host that serves only the SPA (no serverless function behind /api/*)
+  // answers with its own JSON 404 — same detection path, different disguise.
+  if (response.status === 404) {
+    const clone = response.clone();
+    let hostNotFound = false;
+    try {
+      hostNotFound = looksLikeHost404(response, await clone.json());
+    } catch {
+      hostNotFound = false;
+    }
+    if (hostNotFound) {
+      await activateMockMode();
+      return mockDispatch<T>(method, path, body, Boolean(skipRefresh));
+    }
   }
 
   // 401 with SESSION_EXPIRED means the access token aged out mid-session.
