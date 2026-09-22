@@ -64,6 +64,45 @@ Seeded to cover every verification outcome. Try them at `/verify` or on the HR s
 
 ---
 
+## Deployment
+
+The web app is a static SPA (Vercel/Netlify/any static host). The API is an
+Express server that needs a Node host with a PostgreSQL database — Vercel's
+serverless platform cannot run it.
+
+### Web app (Vercel)
+
+1. Import the repository; set **Root Directory** to `apps/web`.
+2. Vercel detects `npm run build`. The script first compiles
+   `@skillseal/shared` (the web app's types come from its output), then runs
+   the SPA build and prerenders `/` and `/verify`.
+3. Set the environment variable `VITE_API_BASE_URL` to the API's URL (below)
+   and redeploy — without it the app shows "sign-in service not available".
+
+### API (Render)
+
+The repository ships a [Blueprint](https://render.com/docs/blueprint-spec)
+(`render.yaml`) with the service and a free PostgreSQL database preconfigured:
+
+1. Render dashboard → **New → Blueprint** → select this repository → Apply.
+2. Fill the marked **secret** environment variables on the service
+   (`DATABASE_URL` is injected from the linked database):
+   - `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET` —
+     `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"`
+   - `CERT_SIGNING_PRIVATE_KEY`, `CERT_SIGNING_PUBLIC_KEY` — generate a fresh
+     pair with the command in `apps/api/.env.example` (the committed pair is a
+     public throwaway for demos only)
+3. The `preDeployCommand` applies migrations and seeds demo data
+   (`scripts/render-postdeploy.sh`, idempotent).
+4. Copy the service URL (e.g. `https://skillseal-api.onrender.com`) into
+   Vercel's `VITE_API_BASE_URL`, and set the service's `CORS_ORIGINS` to your
+   web app's origin, then redeploy both.
+
+Free-tier note: Render instances sleep after 15 idle minutes; the first
+request after a nap takes ~30 s to answer while the instance boots.
+
+---
+
 ## Certificates and verification
 
 Certificates are **immutable historical records**. The holder name, issuer name and skill list are

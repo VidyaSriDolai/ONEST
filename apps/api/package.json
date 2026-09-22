@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev --name init",
+    "db:deploy": "bash scripts/render-postdeploy.sh",
     "db:seed": "tsx prisma/seed.ts",
     "db:seed:certificates": "tsx prisma/seed-certificates.ts",
     "db:studio": "prisma studio",

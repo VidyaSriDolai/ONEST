@@ -19,15 +19,27 @@ const envSchema = z.object({
     WEB_APP_URL: z.string().url().default('http://localhost:5173'),
     // Certificate signing. Validated as real PEM blocks at boot so a malformed
     // key fails here rather than on the first certificate issued.
+    // Dashboard env-var fields cannot hold real newlines, so a literal "\n"
+    // escape is normalised to an actual newline before validation.
     CERT_SIGNING_KEY_ID: z.string().min(1).default('dev-2026-01'),
     CERT_SIGNING_PRIVATE_KEY: z
         .string()
-        .min(1, 'CERT_SIGNING_PRIVATE_KEY is required')
-        .refine((v) => v.includes('BEGIN PRIVATE KEY'), 'CERT_SIGNING_PRIVATE_KEY must be a PKCS#8 PEM block'),
+        .transform((v) => v.replace(/\\n/g, '\n'))
+        .pipe(
+            z
+                .string()
+                .min(1, 'CERT_SIGNING_PRIVATE_KEY is required')
+                .refine((v) => v.includes('BEGIN PRIVATE KEY'), 'CERT_SIGNING_PRIVATE_KEY must be a PKCS#8 PEM block'),
+        ),
     CERT_SIGNING_PUBLIC_KEY: z
         .string()
-        .min(1, 'CERT_SIGNING_PUBLIC_KEY is required')
-        .refine((v) => v.includes('BEGIN PUBLIC KEY'), 'CERT_SIGNING_PUBLIC_KEY must be an SPKI PEM block'),
+        .transform((v) => v.replace(/\\n/g, '\n'))
+        .pipe(
+            z
+                .string()
+                .min(1, 'CERT_SIGNING_PUBLIC_KEY is required')
+                .refine((v) => v.includes('BEGIN PUBLIC KEY'), 'CERT_SIGNING_PUBLIC_KEY must be an SPKI PEM block'),
+        ),
 });
 const parsed = envSchema.safeParse(process.env);
 if (!parsed.success) {

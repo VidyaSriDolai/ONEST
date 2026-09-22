@@ -1,0 +1,68 @@
+# Render Blueprint for the SkillSeal API.
+#
+# Deploy with: Render dashboard → New → Blueprint → pick this repository.
+# Render reads this file and creates the service (and optionally the database)
+# with everything pre-filled. Values you must still set in the dashboard are
+# marked SECRETS below — never put real secrets in this file.
+#
+# After the first deploy:
+#   1. Copy the service URL (https://skillseal-api.onrender.com).
+#   2. In Vercel, set VITE_API_BASE_URL to that URL and redeploy.
+#   3. In Render, set CORS_ORIGINS to https://onest-one.vercel.app.
+#
+# NOTE on the database: the migration SQL is provider-neutral and works on
+# PostgreSQL as-is. SQLite stays the local-dev default (schema.prisma), while
+# Render supplies DATABASE_URL pointing at its PostgreSQL instance.
+
+services:
+  - type: web
+    name: skillseal-api
+    runtime: node
+    plan: free
+    rootDir: apps/api
+    buildCommand: npm install && npx prisma generate && npm run build
+    # Applies migrations + seed before the new version goes live (idempotent).
+    preDeployCommand: bash scripts/render-postdeploy.sh
+    startCommand: npm start
+    healthCheckPath: /api/health
+    # Free instances sleep after 15 minutes idle; the first request then takes
+    # ~30s to wake. Health checks keep it awake only on paid plans.
+    autoDeploy: true
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      # The committed migrations are provider-neutral SQL, so PostgreSQL
+      # accepts them unchanged; no provider switching is needed at deploy time.
+
+      # SECRETS — set these in the Render dashboard (Environment tab):
+      #   DATABASE_URL            from the Render PostgreSQL instance below
+      #   JWT_ACCESS_SECRET       node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+      #   JWT_REFRESH_SECRET      same command, different value
+      #   CERT_SIGNING_PRIVATE_KEY  throwaway dev key in .env.example works for
+      #                           a demo; generate a fresh Ed25519 pair for real use
+      #   CERT_SIGNING_PUBLIC_KEY
+      #   CERT_SIGNING_KEY_ID     e.g. prod-2026-09
+
+      # Non-secret values, pre-filled:
+      - key: ACCESS_TOKEN_TTL
+        value: 15m
+      - key: REFRESH_TOKEN_TTL_DAYS
+        value: "30"
+      # Replace with your final custom domain if you add one later.
+      - key: WEB_APP_URL
+        value: https://onest-one.vercel.app
+      # The deployed web app's origin; the refresh cookie and API calls are
+      # rejected for any other origin.
+      - key: CORS_ORIGINS
+        value: https://onest-one.vercel.app
+
+# Free-tier PostgreSQL. Render links it to the service automatically and
+# injects DATABASE_URL. The free database expires after 30 days — upgrade it
+# from the dashboard when you outgrow the demo.
+databases:
+  - name: skillseal-db
+    databaseName: skillseal
+    plan: free
+    postgresMajorVersion: "16"
