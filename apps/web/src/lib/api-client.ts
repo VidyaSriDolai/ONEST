@@ -55,11 +55,16 @@ interface RequestOptions extends Omit<RequestInit, 'body'> {
 
 async function parse<T>(response: Response): Promise<T> {
   let payload: ApiResponse<T> | null = null;
+  let raw = '';
 
   try {
-    payload = (await response.json()) as ApiResponse<T>;
+    raw = await response.text();
+    payload = JSON.parse(raw) as ApiResponse<T>;
   } catch {
-    // A non-JSON response means something upstream failed (proxy, gateway).
+    // A non-JSON response means something upstream failed. The common case on
+    // a static deploy: the API origin is missing and Vite's SPA fallback (or
+    // the host's 404 page) answered with index.html.
+    if (looksLikeHtml(response, raw)) throw new ApiUnavailableError();
     throw new ApiError(
       response.status,
       'INTERNAL_ERROR',
@@ -84,6 +89,28 @@ async function parse<T>(response: Response): Promise<T> {
  * calls arriving on an expired token triggers one refresh, not several.
  */
 let refreshPromise: Promise<boolean> | null = null;
+
+/**
+ * Thrown when a JSON API call gets HTML back — which on a static deploy means
+ * the API is not running behind this origin and the request hit the SPA
+ * fallback instead. Extends ApiError so every existing error handler surfaces
+ * its actionable message automatically.
+ */
+export class ApiUnavailableError extends ApiError {
+  constructor() {
+    super(
+      503,
+      'INTERNAL_ERROR',
+      'The API server is not reachable from this deployment. If you are the operator, set VITE_API_BASE_URL to the API origin and redeploy.',
+    );
+    this.name = 'ApiUnavailableError';
+  }
+}
+
+function looksLikeHtml(response: Response, body: string): boolean {
+  const contentType = response.headers.get('content-type') ?? '';
+  return contentType.includes('text/html') || /^*<!doctype html/i.test(body.trimStart());
+}
 
 async function refreshSession(): Promise<boolean> {
   refreshPromise ??= (async () => {

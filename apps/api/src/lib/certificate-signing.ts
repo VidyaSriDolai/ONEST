@@ -1,4 +1,5 @@
 import crypto from 'node:crypto';
+import { CERTIFICATE_ID_PATTERN } from '@skillseal/shared';
 import { env } from '../config/env.js';
 import { logger } from './logger.js';
 
@@ -116,8 +117,6 @@ export function generateCertificateId(issuedAt: Date = new Date()): string {
 }
 
 /** Cheap shape check before hitting the database on a public endpoint. */
-export const CERTIFICATE_ID_PATTERN = /^SS-\d{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/i;
-
 export function looksLikeCertificateId(value: string): boolean {
   return CERTIFICATE_ID_PATTERN.test(value.trim());
 }

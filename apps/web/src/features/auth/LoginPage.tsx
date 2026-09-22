@@ -9,7 +9,7 @@ import { Seo } from '@/components/seo/Seo';
 import { Alert } from '@/components/ui/Alert';
 import { Button } from '@/components/ui/Button';
 import { Checkbox, PasswordField, TextField } from '@/components/ui/Field';
-import { ApiError } from '@/lib/api-client';
+import { ApiError, ApiUnavailableError } from '@/lib/api-client';
 import { useAuth } from './AuthProvider';
 
 /**
@@ -50,6 +50,12 @@ export default function LoginPage() {
       const user = await login(values);
       navigate(redirectTo ?? ROLE_HOME[user.role], { replace: true });
     } catch (error) {
+      if (error instanceof ApiUnavailableError) {
+        setFormError(
+          'The sign-in service is not available right now. This deployment is missing its API connection — please try again later.',
+        );
+        return;
+      }
       if (error instanceof ApiError) {
         // Field-level messages take priority over the banner.
         if (error.details) {

@@ -149,7 +149,21 @@ async function seedCertificates(holderId: string): Promise<void> {
     const existing = await prisma.certificate.findUnique({
       where: { certificateId: spec.certificateId },
     });
-    if (existing) continue; // db:reset clears and re-runs
+    if (existing) {
+      // Re-sign an existing row only when its stored skills still match what
+      // this seed would write. A row whose skills were edited after signing is
+      // a deliberate tamper demo (or a real incident) — silently fixing it
+      // here would destroy the evidence the UI is meant to show.
+      const storedSkills = JSON.parse(existing.skillsJson) as string[];
+      const expectedSkills = [...skillNames, ...(spec.extraSkills ?? [])].sort();
+      if (JSON.stringify(storedSkills.slice().sort()) === JSON.stringify(expectedSkills)) {
+        await prisma.certificate.update({
+          where: { id: existing.id },
+          data: { signature, keyId },
+        });
+      }
+      continue;
+    }
 
     await prisma.certificate.create({
       data: {
@@ -161,7 +175,10 @@ async function seedCertificates(holderId: string): Promise<void> {
         holderName: payload.holderName,
         trackName: payload.trackName,
         issuerName: payload.issuerName,
-        skillsJson: JSON.stringify(spec.extraSkills ?? skillNames),
+        // extraSkills ADD rows on top of the track skills — that is what makes
+        // the tamper demo work: the signature covers the track skills only, so
+        // the appended rows fail the integrity check.
+        skillsJson: JSON.stringify([...skillNames, ...(spec.extraSkills ?? [])]),
         score: spec.score,
         issuedAt: payload.issuedAt,
         expiresAt,

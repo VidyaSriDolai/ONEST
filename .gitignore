@@ -35,3 +35,6 @@ pnpm-debug.log*
 # Local databases
 *.db
 *.db-journal
+
+# Vite dev-server cache
+.vite/
