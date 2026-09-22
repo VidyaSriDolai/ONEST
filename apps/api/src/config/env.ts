@@ -41,6 +41,13 @@ const envSchema = z.object({
                 .refine((v) => v.includes('BEGIN PUBLIC KEY'), 'CERT_SIGNING_PUBLIC_KEY must be an SPKI PEM block'),
         ),
 });
+// Some machines export a machine-wide PORT that is empty or 0 — meaningless
+// for a listener and only useful as "pick ephemeral", which this server does
+// not support. Treat those as unset so .env or the schema default supplies a
+// real value; a valid PORT from a deploy platform still wins.
+if (process.env.PORT !== undefined && !Number(process.env.PORT)) {
+    delete process.env.PORT;
+}
 const parsed = envSchema.safeParse(process.env);
 if (!parsed.success) {
     const issues = parsed.error.issues

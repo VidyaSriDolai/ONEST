@@ -91,6 +91,49 @@ async function parse<T>(response: Response): Promise<T> {
 let refreshPromise: Promise<boolean> | null = null;
 
 /**
+ * Mock fallback state. The deployed site currently has no API behind it, so
+ * when a request gets the SPA's HTML back we flip into mock mode for the rest
+ * of the tab session and serve demo data instead. The real API always wins:
+ * if it comes back (VITE_API_BASE_URL set), the next hard reload uses it.
+ * Seeded from sessionStorage (same key as mock-api's flag — duplicated here as
+ * a literal so the 40 KB mock module stays lazily loaded) so a reload mid-demo
+ * stays in demo mode instead of bouncing off the missing API again.
+ */
+let usingMock =
+  typeof window !== 'undefined' && window.sessionStorage.getItem('ss-mock-api') === '1';
+
+async function mockDispatch<T>(
+  method: string,
+  path: string,
+  body: unknown,
+  skipRefresh: boolean,
+): Promise<T> {
+  const { mockRequest } = await import('./mock-api');
+  const { status, payload } = await mockRequest(method, path, body, accessToken);
+
+  if (!payload.ok) {
+    // Mid-session expiry in mock mode: drop the session like the real client.
+    if (status === 401 && !skipRefresh) {
+      setAccessToken(null);
+      onUnauthorized();
+    }
+    throw new ApiError(status, payload.error.code, payload.error.message, payload.error.details);
+  }
+  return payload.data as T;
+}
+
+async function activateMockMode(): Promise<void> {
+  if (usingMock) return;
+  usingMock = true;
+  const { enableMockMode } = await import('./mock-api');
+  enableMockMode();
+  // Drop the dead real-API session so guards re-run against the mock; the
+  // boot refresh that follows resolves from the mock's remembered session.
+  setAccessToken(null);
+  onUnauthorized();
+}
+
+/**
  * Thrown when a JSON API call gets HTML back — which on a static deploy means
  * the API is not running behind this origin and the request hit the SPA
  * fallback instead. Extends ApiError so every existing error handler surfaces
@@ -109,7 +152,7 @@ export class ApiUnavailableError extends ApiError {
 
 function looksLikeHtml(response: Response, body: string): boolean {
   const contentType = response.headers.get('content-type') ?? '';
-  return contentType.includes('text/html') || /^*<!doctype html/i.test(body.trimStart());
+  return contentType.includes('text/html') || /^\s*<!doctype html/i.test(body.trimStart());
 }
 
 async function refreshSession(): Promise<boolean> {
@@ -136,6 +179,11 @@ async function refreshSession(): Promise<boolean> {
 
 export async function apiRequest<T>(path: string, options: RequestOptions = {}): Promise<T> {
   const { body, skipRefresh, headers, ...rest } = options;
+  const method = (rest.method ?? 'GET') as string;
+
+  // Mock mode short-circuits every request — including auth refreshes, which
+  // the mock answers from its stored session.
+  if (usingMock) return mockDispatch<T>(method, path, body, Boolean(skipRefresh));
 
   const send = (): Promise<Response> =>
     fetch(BASE_URL + path, {
@@ -151,6 +199,15 @@ export async function apiRequest<T>(path: string, options: RequestOptions = {}):
     });
 
   let response = await send();
+
+  // A static deploy with no API behind it answers JSON routes with the SPA's
+  // index.html. Detect that once, switch to mock mode, and replay the request
+  // against the in-browser demo backend.
+  const contentType = response.headers.get('content-type') ?? '';
+  if (contentType.includes('text/html')) {
+    await activateMockMode();
+    return mockDispatch<T>(method, path, body, Boolean(skipRefresh));
+  }
 
   // 401 with SESSION_EXPIRED means the access token aged out mid-session.
   // Refresh once, transparently, and replay the original request.
