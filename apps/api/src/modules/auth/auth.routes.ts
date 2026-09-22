@@ -1,0 +1,15 @@
+import { Router } from 'express';
+import { forgotPasswordSchema, loginSchema, registerSchema, resetPasswordSchema, } from '@skillseal/shared';
+import { validateBody } from '../../middleware/validate.js';
+import { requireAuth } from '../../middleware/auth.js';
+import { authLimiter, passwordResetLimiter } from '../../middleware/rate-limit.js';
+import { asyncHandler } from '../../lib/http.js';
+import * as controller from './auth.controller.js';
+export const authRouter = Router();
+authRouter.post('/register', authLimiter, validateBody(registerSchema), asyncHandler(controller.register));
+authRouter.post('/login', authLimiter, validateBody(loginSchema), asyncHandler(controller.login));
+authRouter.post('/refresh', asyncHandler(controller.refresh));
+authRouter.post('/logout', asyncHandler(controller.logout));
+authRouter.get('/me', requireAuth, asyncHandler(controller.me));
+authRouter.post('/forgot-password', passwordResetLimiter, validateBody(forgotPasswordSchema), asyncHandler(controller.forgotPassword));
+authRouter.post('/reset-password', authLimiter, validateBody(resetPasswordSchema), asyncHandler(controller.resetPassword));

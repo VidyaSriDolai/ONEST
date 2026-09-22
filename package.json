@@ -18,6 +18,7 @@
     "db:generate": "npm run db:generate -w @skillseal/api",
     "db:migrate": "npm run db:migrate -w @skillseal/api",
     "db:seed": "npm run db:seed -w @skillseal/api",
+    "db:seed:certificates": "npm run db:seed:certificates -w @skillseal/api",
     "db:studio": "npm run db:studio -w @skillseal/api",
     "db:reset": "npm run db:reset -w @skillseal/api",
     "setup": "npm install && node scripts/setup-env.mjs && npm run build -w @skillseal/shared && npm run db:migrate && npm run db:seed",

@@ -1,0 +1,1551 @@
+{
+  "organization": [
+    {
+      "id": "cmu81sy5f00007aykdxr8cfb3",
+      "name": "Infosys Springboard",
+      "slug": "infosys-springboard",
+      "kind": "COMPANY",
+      "isActive": true,
+      "createdAt": "2026-09-19T07:10:39.843Z",
+      "updatedAt": "2026-09-19T07:10:39.843Z"
+    },
+    {
+      "id": "cmu81sy6e00017aykzq2v1kol",
+      "name": "Acme Technologies",
+      "slug": "acme-technologies",
+      "kind": "EMPLOYER",
+      "isActive": true,
+      "createdAt": "2026-09-19T07:10:39.878Z",
+      "updatedAt": "2026-09-19T07:10:39.878Z"
+    }
+  ],
+  "user": [
+    {
+      "id": "cmu81sy7500037aykave9voar",
+      "email": "student@demo.test",
+      "passwordHash": "$2a$12$wleoY9jWfZdPuFbRTTZl5eEHBU22RBtXqx3t9A3dpwFy/fC5URnoy",
+      "fullName": "Ananya Rao",
+      "role": "STUDENT",
+      "emailVerified": true,
+      "isActive": true,
+      "lastLoginAt": "2026-09-21T18:51:52.931Z",
+      "failedAttempts": 0,
+      "lockedUntil": null,
+      "createdAt": "2026-09-19T07:10:39.905Z",
+      "updatedAt": "2026-09-21T18:51:52.932Z",
+      "organizationId": null
+    },
+    {
+      "id": "cmu81sy7o00057ayk5gdfb2iq",
+      "email": "company@demo.test",
+      "passwordHash": "$2a$12$wleoY9jWfZdPuFbRTTZl5eEHBU22RBtXqx3t9A3dpwFy/fC5URnoy",
+      "fullName": "Rahul Menon",
+      "role": "COMPANY",
+      "emailVerified": true,
+      "isActive": true,
+      "lastLoginAt": "2026-09-21T17:34:17.172Z",
+      "failedAttempts": 0,
+      "lockedUntil": null,
+      "createdAt": "2026-09-19T07:10:39.924Z",
+      "updatedAt": "2026-09-21T17:34:17.174Z",
+      "organizationId": "cmu81sy5f00007aykdxr8cfb3"
+    },
+    {
+      "id": "cmu81sy8g00077aykp29749xy",
+      "email": "hr@demo.test",
+      "passwordHash": "$2a$12$wleoY9jWfZdPuFbRTTZl5eEHBU22RBtXqx3t9A3dpwFy/fC5URnoy",
+      "fullName": "Priya Sharma",
+      "role": "HR",
+      "emailVerified": true,
+      "isActive": true,
+      "lastLoginAt": "2026-09-21T17:33:52.952Z",
+      "failedAttempts": 0,
+      "lockedUntil": null,
+      "createdAt": "2026-09-19T07:10:39.953Z",
+      "updatedAt": "2026-09-21T17:33:52.953Z",
+      "organizationId": "cmu81sy6e00017aykzq2v1kol"
+    },
+    {
+      "id": "cmu81sy8z00097aykkmxq40zw",
+      "email": "admin@demo.test",
+      "passwordHash": "$2a$12$wleoY9jWfZdPuFbRTTZl5eEHBU22RBtXqx3t9A3dpwFy/fC5URnoy",
+      "fullName": "Platform Admin",
+      "role": "ADMIN",
+      "emailVerified": true,
+      "isActive": true,
+      "lastLoginAt": "2026-09-21T17:37:32.508Z",
+      "failedAttempts": 0,
+      "lockedUntil": null,
+      "createdAt": "2026-09-19T07:10:39.971Z",
+      "updatedAt": "2026-09-21T17:37:32.510Z",
+      "organizationId": null
+    }
+  ],
+  "skill": [
+    {
+      "id": "cmu8qlls0000a7ajonb3msez5",
+      "name": "React",
+      "slug": "react",
+      "sfiaCode": "PROG",
+      "description": "Component-based UI development"
+    },
+    {
+      "id": "cmu8qllsi000b7ajom2at47do",
+      "name": "Node.js",
+      "slug": "nodejs",
+      "sfiaCode": "PROG",
+      "description": "Server-side JavaScript"
+    },
+    {
+      "id": "cmu8qllt0000c7ajorxm0fi7m",
+      "name": "REST APIs",
+      "slug": "rest-apis",
+      "sfiaCode": "DTAN",
+      "description": "HTTP API design"
+    },
+    {
+      "id": "cmu8qlltl000d7ajop0m7raa5",
+      "name": "PostgreSQL",
+      "slug": "postgresql",
+      "sfiaCode": "DBAD",
+      "description": "Relational databases"
+    },
+    {
+      "id": "cmu8qllu4000e7ajotsgpge2u",
+      "name": "SQL",
+      "slug": "sql",
+      "sfiaCode": "DBAD",
+      "description": "Query authoring and tuning"
+    },
+    {
+      "id": "cmu8qllum000f7ajool3odhmm",
+      "name": "Docker",
+      "slug": "docker",
+      "sfiaCode": "SYSP",
+      "description": "Containerisation"
+    },
+    {
+      "id": "cmu8qllvd000g7ajowzxngqk1",
+      "name": "CI/CD",
+      "slug": "ci-cd",
+      "sfiaCode": "RELM",
+      "description": "Automated delivery pipelines"
+    },
+    {
+      "id": "cmu8qllvv000h7ajo980r71u5",
+      "name": "Kubernetes",
+      "slug": "kubernetes",
+      "sfiaCode": "SYSP",
+      "description": "Container orchestration"
+    }
+  ],
+  "certificationTrack": [
+    {
+      "id": "cmu8qllwf000j7ajo878wl1rc",
+      "name": "Full Stack Developer",
+      "slug": "full-stack-developer",
+      "description": "End-to-end web development: building interfaces, designing APIs and modelling relational data.",
+      "nsqfLevel": 6,
+      "validityMonths": 36,
+      "minimumScore": 60,
+      "isActive": true,
+      "createdAt": "2026-09-19T18:44:47.776Z",
+      "updatedAt": "2026-09-19T19:16:10.004Z",
+      "issuerOrgId": "cmu81sy5f00007aykdxr8cfb3"
+    },
+    {
+      "id": "cmu8qllxr000l7ajouj8ujwn4",
+      "name": "Cloud & DevOps Engineer",
+      "slug": "cloud-devops-engineer",
+      "description": "Containerised delivery: packaging services, automating pipelines and operating them in production.",
+      "nsqfLevel": 6,
+      "validityMonths": 24,
+      "minimumScore": 60,
+      "isActive": true,
+      "createdAt": "2026-09-19T18:44:47.824Z",
+      "updatedAt": "2026-09-19T19:16:10.067Z",
+      "issuerOrgId": "cmu81sy5f00007aykdxr8cfb3"
+    }
+  ],
+  "trackCourse": [
+    {
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj"
+    },
+    {
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "courseId": "cmu8rpyv6002u7ayggkuy5rt3"
+    },
+    {
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild"
+    },
+    {
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "courseId": "cmu8rpydx000v7aygs6cmzkhf"
+    },
+    {
+      "trackId": "cmu8qllxr000l7ajouj8ujwn4",
+      "courseId": "cmu8rpz32004g7aygfwdo2fvu"
+    }
+  ],
+  "trackSkill": [
+    {
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "skillId": "cmu8qlls0000a7ajonb3msez5"
+    },
+    {
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "skillId": "cmu8qllsi000b7ajom2at47do"
+    },
+    {
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "skillId": "cmu8qllt0000c7ajorxm0fi7m"
+    },
+    {
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "skillId": "cmu8qlltl000d7ajop0m7raa5"
+    },
+    {
+      "trackId": "cmu8qllxr000l7ajouj8ujwn4",
+      "skillId": "cmu8qllum000f7ajool3odhmm"
+    },
+    {
+      "trackId": "cmu8qllxr000l7ajouj8ujwn4",
+      "skillId": "cmu8qllvd000g7ajowzxngqk1"
+    },
+    {
+      "trackId": "cmu8qllxr000l7ajouj8ujwn4",
+      "skillId": "cmu8qllvv000h7ajo980r71u5"
+    }
+  ],
+  "course": [
+    {
+      "id": "cmu8rpydx000v7aygs6cmzkhf",
+      "slug": "java-basics",
+      "title": "Java Basics",
+      "description": "Syntax, types, control flow and object-oriented fundamentals. The entry point for every backend track.",
+      "category": "Programming",
+      "level": "BEGINNER",
+      "durationHours": 12,
+      "rating": 4.6,
+      "isPublished": true,
+      "providerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "createdAt": "2026-09-19T19:16:10.198Z",
+      "updatedAt": "2026-09-19T19:16:10.198Z"
+    },
+    {
+      "id": "cmu8rpyiq001x7aygxhtttkwj",
+      "slug": "react-fundamentals",
+      "title": "React Fundamentals",
+      "description": "Components, state and effects. Build interfaces that stay predictable as they grow.",
+      "category": "Frontend",
+      "level": "INTERMEDIATE",
+      "durationHours": 16,
+      "rating": 4.8,
+      "isPublished": true,
+      "providerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "createdAt": "2026-09-19T19:16:10.371Z",
+      "updatedAt": "2026-09-19T19:16:10.371Z"
+    },
+    {
+      "id": "cmu8rpyv6002u7ayggkuy5rt3",
+      "slug": "rest-api-design",
+      "title": "REST API Design",
+      "description": "Resources, status codes, versioning and pagination — designing APIs other teams enjoy using.",
+      "category": "Backend",
+      "level": "INTERMEDIATE",
+      "durationHours": 14,
+      "rating": 4.5,
+      "isPublished": true,
+      "providerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "createdAt": "2026-09-19T19:16:10.818Z",
+      "updatedAt": "2026-09-19T19:16:10.818Z"
+    },
+    {
+      "id": "cmu8rpyz9003q7aygbnsx9ild",
+      "slug": "postgresql-essentials",
+      "title": "PostgreSQL Essentials",
+      "description": "Schema design, indexing and query planning — making relational data fast and correct.",
+      "category": "Databases",
+      "level": "INTERMEDIATE",
+      "durationHours": 18,
+      "rating": 4.7,
+      "isPublished": true,
+      "providerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "createdAt": "2026-09-19T19:16:10.966Z",
+      "updatedAt": "2026-09-19T19:16:10.966Z"
+    },
+    {
+      "id": "cmu8rpz32004g7aygfwdo2fvu",
+      "slug": "docker-for-developers",
+      "title": "Docker for Developers",
+      "description": "Images, layers and Compose — shipping the same environment everywhere.",
+      "category": "DevOps",
+      "level": "BEGINNER",
+      "durationHours": 10,
+      "rating": 4.4,
+      "isPublished": true,
+      "providerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "createdAt": "2026-09-19T19:16:11.102Z",
+      "updatedAt": "2026-09-19T19:16:11.102Z"
+    }
+  ],
+  "courseSkill": [
+    {
+      "courseId": "cmu8rpydx000v7aygs6cmzkhf",
+      "skillId": "cmu8qllsi000b7ajom2at47do"
+    },
+    {
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj",
+      "skillId": "cmu8qlls0000a7ajonb3msez5"
+    },
+    {
+      "courseId": "cmu8rpyv6002u7ayggkuy5rt3",
+      "skillId": "cmu8qllt0000c7ajorxm0fi7m"
+    },
+    {
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild",
+      "skillId": "cmu8qlltl000d7ajop0m7raa5"
+    },
+    {
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild",
+      "skillId": "cmu8qllu4000e7ajotsgpge2u"
+    },
+    {
+      "courseId": "cmu8rpz32004g7aygfwdo2fvu",
+      "skillId": "cmu8qllum000f7ajool3odhmm"
+    }
+  ],
+  "coursePrerequisite": [
+    {
+      "courseId": "cmu8rpyv6002u7ayggkuy5rt3",
+      "prerequisiteId": "cmu8rpydx000v7aygs6cmzkhf"
+    }
+  ],
+  "module": [
+    {
+      "id": "cmu8rpyeo000w7aygqkfeuwrg",
+      "courseId": "cmu8rpydx000v7aygs6cmzkhf",
+      "title": "Variables and types",
+      "content": "Primitives, references, and when each is used.",
+      "orderIndex": 0,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyeo000x7aygf441o10v",
+      "courseId": "cmu8rpydx000v7aygs6cmzkhf",
+      "title": "Control flow",
+      "content": "Branching, loops, and the switch expression.",
+      "orderIndex": 1,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyeo000y7aygjvms28oa",
+      "courseId": "cmu8rpydx000v7aygs6cmzkhf",
+      "title": "Classes and objects",
+      "content": "Constructors, fields, methods and encapsulation.",
+      "orderIndex": 2,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyeo000z7aygef2ph8i9",
+      "courseId": "cmu8rpydx000v7aygs6cmzkhf",
+      "title": "Collections",
+      "content": "List, Set and Map, and choosing between them.",
+      "orderIndex": 3,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyjb001y7ayg02mvbfiy",
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj",
+      "title": "Components and props",
+      "content": "Composition, and why props flow one way.",
+      "orderIndex": 0,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyjb001z7aygco7hucya",
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj",
+      "title": "State and events",
+      "content": "useState, and keeping state where it belongs.",
+      "orderIndex": 1,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyjb00207aygjsk8c9en",
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj",
+      "title": "Effects",
+      "content": "useEffect, dependencies, and cleanup.",
+      "orderIndex": 2,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyjb00217aygk4496767",
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj",
+      "title": "Lists and keys",
+      "content": "Rendering collections without surprising bugs.",
+      "orderIndex": 3,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyjb00227aygm52iih2t",
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj",
+      "title": "Forms",
+      "content": "Controlled inputs and validation.",
+      "orderIndex": 4,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyvn002v7aygo0x1qnrk",
+      "courseId": "cmu8rpyv6002u7ayggkuy5rt3",
+      "title": "Resources and URIs",
+      "content": "Modelling nouns, not verbs.",
+      "orderIndex": 0,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyvn002w7ayg9lgnse2t",
+      "courseId": "cmu8rpyv6002u7ayggkuy5rt3",
+      "title": "Status codes",
+      "content": "Saying precisely what happened.",
+      "orderIndex": 1,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyvn002x7ayguxatq1e2",
+      "courseId": "cmu8rpyv6002u7ayggkuy5rt3",
+      "title": "Pagination and filtering",
+      "content": "Keeping large collections usable.",
+      "orderIndex": 2,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyvn002y7ayg10qea2a0",
+      "courseId": "cmu8rpyv6002u7ayggkuy5rt3",
+      "title": "Versioning",
+      "content": "Changing an API without breaking clients.",
+      "orderIndex": 3,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyzx003r7aygp4mfma1q",
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild",
+      "title": "Schema design",
+      "content": "Normalisation, keys and constraints.",
+      "orderIndex": 0,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyzx003s7ayg80svuajz",
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild",
+      "title": "Indexes",
+      "content": "B-tree, partial and composite indexes.",
+      "orderIndex": 1,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyzx003t7aygjvbe8ktn",
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild",
+      "title": "Query planning",
+      "content": "Reading EXPLAIN ANALYZE output.",
+      "orderIndex": 2,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpyzx003u7aygxu01o9zb",
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild",
+      "title": "Transactions",
+      "content": "Isolation levels and locking.",
+      "orderIndex": 3,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpz3l004h7ayg5mop0i4v",
+      "courseId": "cmu8rpz32004g7aygfwdo2fvu",
+      "title": "Images and containers",
+      "content": "The difference, and why it matters.",
+      "orderIndex": 0,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpz3l004i7aygz090r4mt",
+      "courseId": "cmu8rpz32004g7aygfwdo2fvu",
+      "title": "Writing a Dockerfile",
+      "content": "Layers, caching and image size.",
+      "orderIndex": 1,
+      "durationMinutes": 15
+    },
+    {
+      "id": "cmu8rpz3l004j7aygad9ju7qx",
+      "courseId": "cmu8rpz32004g7aygfwdo2fvu",
+      "title": "Docker Compose",
+      "content": "Running multi-service stacks locally.",
+      "orderIndex": 2,
+      "durationMinutes": 15
+    }
+  ],
+  "enrollment": [
+    {
+      "id": "cmu8rpzbi00557ayghps7hvea",
+      "userId": "cmu81sy7500037aykave9voar",
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj",
+      "status": "COMPLETED",
+      "progressPercent": 100,
+      "enrolledAt": "2026-09-19T19:16:11.406Z",
+      "completedAt": "2026-09-19T19:16:11.404Z"
+    },
+    {
+      "id": "cmu8rpzgf005m7ayg3ytcqk39",
+      "userId": "cmu81sy7500037aykave9voar",
+      "courseId": "cmu8rpydx000v7aygs6cmzkhf",
+      "status": "COMPLETED",
+      "progressPercent": 100,
+      "enrolledAt": "2026-09-19T19:16:11.583Z",
+      "completedAt": "2026-09-19T19:16:11.581Z"
+    },
+    {
+      "id": "cmu8rpzmr00647aygdbw8wgbf",
+      "userId": "cmu81sy7500037aykave9voar",
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild",
+      "status": "ACTIVE",
+      "progressPercent": 50,
+      "enrolledAt": "2026-09-19T19:16:11.811Z",
+      "completedAt": null
+    },
+    {
+      "id": "cmu8rpzo300687aygtkurv2zr",
+      "userId": "cmu81sy7500037aykave9voar",
+      "courseId": "cmu8rpz32004g7aygfwdo2fvu",
+      "status": "ACTIVE",
+      "progressPercent": 0,
+      "enrolledAt": "2026-09-19T19:16:11.860Z",
+      "completedAt": null
+    }
+  ],
+  "moduleProgress": [
+    {
+      "id": "cmu8rpzc600567aygwjh6a3ym",
+      "enrollmentId": "cmu8rpzbi00557ayghps7hvea",
+      "moduleId": "cmu8rpyjb001y7ayg02mvbfiy",
+      "completedAt": "2026-09-19T19:16:11.431Z"
+    },
+    {
+      "id": "cmu8rpzc600577aygaevlf6o2",
+      "enrollmentId": "cmu8rpzbi00557ayghps7hvea",
+      "moduleId": "cmu8rpyjb001z7aygco7hucya",
+      "completedAt": "2026-09-19T19:16:11.431Z"
+    },
+    {
+      "id": "cmu8rpzc600587aygcvyzfv3i",
+      "enrollmentId": "cmu8rpzbi00557ayghps7hvea",
+      "moduleId": "cmu8rpyjb00207aygjsk8c9en",
+      "completedAt": "2026-09-19T19:16:11.431Z"
+    },
+    {
+      "id": "cmu8rpzc600597ayge0sqf8j0",
+      "enrollmentId": "cmu8rpzbi00557ayghps7hvea",
+      "moduleId": "cmu8rpyjb00217aygk4496767",
+      "completedAt": "2026-09-19T19:16:11.431Z"
+    },
+    {
+      "id": "cmu8rpzc6005a7aygg0wfb9te",
+      "enrollmentId": "cmu8rpzbi00557ayghps7hvea",
+      "moduleId": "cmu8rpyjb00227aygm52iih2t",
+      "completedAt": "2026-09-19T19:16:11.431Z"
+    },
+    {
+      "id": "cmu8rpzh7005n7aygnkwn6omm",
+      "enrollmentId": "cmu8rpzgf005m7ayg3ytcqk39",
+      "moduleId": "cmu8rpyeo000w7aygqkfeuwrg",
+      "completedAt": "2026-09-19T19:16:11.611Z"
+    },
+    {
+      "id": "cmu8rpzh7005o7ayg4ruqaoxj",
+      "enrollmentId": "cmu8rpzgf005m7ayg3ytcqk39",
+      "moduleId": "cmu8rpyeo000x7aygf441o10v",
+      "completedAt": "2026-09-19T19:16:11.611Z"
+    },
+    {
+      "id": "cmu8rpzh7005p7aygngssika1",
+      "enrollmentId": "cmu8rpzgf005m7ayg3ytcqk39",
+      "moduleId": "cmu8rpyeo000y7aygjvms28oa",
+      "completedAt": "2026-09-19T19:16:11.611Z"
+    },
+    {
+      "id": "cmu8rpzh7005q7aygkcptbk7u",
+      "enrollmentId": "cmu8rpzgf005m7ayg3ytcqk39",
+      "moduleId": "cmu8rpyeo000z7aygef2ph8i9",
+      "completedAt": "2026-09-19T19:16:11.611Z"
+    },
+    {
+      "id": "cmu8rpznd00657ayg03xkofdg",
+      "enrollmentId": "cmu8rpzmr00647aygdbw8wgbf",
+      "moduleId": "cmu8rpyzx003r7aygp4mfma1q",
+      "completedAt": "2026-09-19T19:16:11.833Z"
+    },
+    {
+      "id": "cmu8rpznd00667ayg385uhj39",
+      "enrollmentId": "cmu8rpzmr00647aygdbw8wgbf",
+      "moduleId": "cmu8rpyzx003s7ayg80svuajz",
+      "completedAt": "2026-09-19T19:16:11.833Z"
+    }
+  ],
+  "assessment": [
+    {
+      "id": "cmu8rpyfl00117aygdtbistx7",
+      "courseId": "cmu8rpydx000v7aygs6cmzkhf",
+      "title": "Java Basics — final assessment",
+      "passingScore": 60,
+      "timeLimitMinutes": 20,
+      "maxAttempts": 3,
+      "isPublished": true,
+      "createdAt": "2026-09-19T19:16:10.257Z",
+      "updatedAt": "2026-09-19T19:16:10.257Z"
+    },
+    {
+      "id": "cmu8rpykp00247aygs2kkyauy",
+      "courseId": "cmu8rpyiq001x7aygxhtttkwj",
+      "title": "React Fundamentals — final assessment",
+      "passingScore": 60,
+      "timeLimitMinutes": 25,
+      "maxAttempts": 3,
+      "isPublished": true,
+      "createdAt": "2026-09-19T19:16:10.442Z",
+      "updatedAt": "2026-09-19T19:16:10.442Z"
+    },
+    {
+      "id": "cmu8rpywx00307aygn3g6rrym",
+      "courseId": "cmu8rpyv6002u7ayggkuy5rt3",
+      "title": "REST API Design — final assessment",
+      "passingScore": 65,
+      "timeLimitMinutes": 20,
+      "maxAttempts": 3,
+      "isPublished": true,
+      "createdAt": "2026-09-19T19:16:10.882Z",
+      "updatedAt": "2026-09-19T19:16:10.882Z"
+    },
+    {
+      "id": "cmu8rpz0x003w7ayg81g4vea2",
+      "courseId": "cmu8rpyz9003q7aygbnsx9ild",
+      "title": "PostgreSQL Essentials — final assessment",
+      "passingScore": 60,
+      "timeLimitMinutes": 25,
+      "maxAttempts": 3,
+      "isPublished": true,
+      "createdAt": "2026-09-19T19:16:11.025Z",
+      "updatedAt": "2026-09-19T19:16:11.025Z"
+    },
+    {
+      "id": "cmu8rpz4p004l7aygnal8zpnq",
+      "courseId": "cmu8rpz32004g7aygfwdo2fvu",
+      "title": "Docker for Developers — final assessment",
+      "passingScore": 60,
+      "timeLimitMinutes": 15,
+      "maxAttempts": 3,
+      "isPublished": true,
+      "createdAt": "2026-09-19T19:16:11.161Z",
+      "updatedAt": "2026-09-19T19:16:11.161Z"
+    }
+  ],
+  "question": [
+    {
+      "id": "cmu8rpyg500137aygrs33u82d",
+      "assessmentId": "cmu8rpyfl00117aygdtbistx7",
+      "text": "Which keyword prevents a class from being subclassed?",
+      "orderIndex": 0,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpygn00197aygire0ze3s",
+      "assessmentId": "cmu8rpyfl00117aygdtbistx7",
+      "text": "What is the default value of an uninitialised int field?",
+      "orderIndex": 1,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyh4001f7aygyeu93ilf",
+      "assessmentId": "cmu8rpyfl00117aygdtbistx7",
+      "text": "Which collection guarantees no duplicate elements?",
+      "orderIndex": 2,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyhl001l7ayg1v8un6jv",
+      "assessmentId": "cmu8rpyfl00117aygdtbistx7",
+      "text": "What does the JVM do with an object that has no references?",
+      "orderIndex": 3,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyi9001r7ayg6fuu6j47",
+      "assessmentId": "cmu8rpyfl00117aygdtbistx7",
+      "text": "Which access modifier makes a member visible only within its own class?",
+      "orderIndex": 4,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyl900267aygv3z8c08k",
+      "assessmentId": "cmu8rpykp00247aygs2kkyauy",
+      "text": "What does the dependency array of useEffect control?",
+      "orderIndex": 0,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpytm002c7aygvl38wdu7",
+      "assessmentId": "cmu8rpykp00247aygs2kkyauy",
+      "text": "Why should list keys be stable and unique?",
+      "orderIndex": 1,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyu8002i7ayge1z1gl9s",
+      "assessmentId": "cmu8rpykp00247aygs2kkyauy",
+      "text": "What makes an input \"controlled\"?",
+      "orderIndex": 2,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyup002o7ayg8fca06w4",
+      "assessmentId": "cmu8rpykp00247aygs2kkyauy",
+      "text": "Props in React are:",
+      "orderIndex": 3,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyxe00327aygr8sab6hq",
+      "assessmentId": "cmu8rpywx00307aygn3g6rrym",
+      "text": "Which status code fits a successful POST that created a resource?",
+      "orderIndex": 0,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyxv00387aygtjfltjf4",
+      "assessmentId": "cmu8rpywx00307aygn3g6rrym",
+      "text": "A request that is well-formed but semantically invalid should return:",
+      "orderIndex": 1,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyyc003e7aygmxyirthb",
+      "assessmentId": "cmu8rpywx00307aygn3g6rrym",
+      "text": "Which is the most RESTful path for one user’s orders?",
+      "orderIndex": 2,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpyyt003k7aygkz32gr29",
+      "assessmentId": "cmu8rpywx00307aygn3g6rrym",
+      "text": "Idempotent means:",
+      "orderIndex": 3,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpz1d003y7ayghxz8xowy",
+      "assessmentId": "cmu8rpz0x003w7ayg81g4vea2",
+      "text": "Which index type does PostgreSQL create by default?",
+      "orderIndex": 0,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpz1w00447aygpykra6u3",
+      "assessmentId": "cmu8rpz0x003w7ayg81g4vea2",
+      "text": "EXPLAIN ANALYZE differs from EXPLAIN because it:",
+      "orderIndex": 1,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpz2e004a7aygxf52ersz",
+      "assessmentId": "cmu8rpz0x003w7ayg81g4vea2",
+      "text": "A foreign key primarily enforces:",
+      "orderIndex": 2,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpz56004n7ayg0z98twcz",
+      "assessmentId": "cmu8rpz4p004l7aygnal8zpnq",
+      "text": "A Docker image is best described as:",
+      "orderIndex": 0,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpz5o004t7aygye3ju5jc",
+      "assessmentId": "cmu8rpz4p004l7aygnal8zpnq",
+      "text": "Why put rarely-changing instructions early in a Dockerfile?",
+      "orderIndex": 1,
+      "marks": 1
+    },
+    {
+      "id": "cmu8rpz68004z7aygkx8vxt5z",
+      "assessmentId": "cmu8rpz4p004l7aygnal8zpnq",
+      "text": "docker compose up primarily:",
+      "orderIndex": 2,
+      "marks": 1
+    }
+  ],
+  "questionOption": [
+    {
+      "id": "cmu8rpyg500147aygujasykjk",
+      "questionId": "cmu8rpyg500137aygrs33u82d",
+      "text": "final",
+      "isCorrect": true,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyg500157aygzsmf77o4",
+      "questionId": "cmu8rpyg500137aygrs33u82d",
+      "text": "static",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyg500167aygiu6dyvkp",
+      "questionId": "cmu8rpyg500137aygrs33u82d",
+      "text": "sealed",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyg500177aygh9txav5u",
+      "questionId": "cmu8rpyg500137aygrs33u82d",
+      "text": "private",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpygn001a7ayg5mnvz1oa",
+      "questionId": "cmu8rpygn00197aygire0ze3s",
+      "text": "null",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpygn001b7ayg8zyad9cc",
+      "questionId": "cmu8rpygn00197aygire0ze3s",
+      "text": "0",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpygn001c7aygf11yg1z5",
+      "questionId": "cmu8rpygn00197aygire0ze3s",
+      "text": "undefined",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpygn001d7aygixlom7zx",
+      "questionId": "cmu8rpygn00197aygire0ze3s",
+      "text": "It is a compile error",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyh4001g7ayg8valpw4m",
+      "questionId": "cmu8rpyh4001f7aygyeu93ilf",
+      "text": "List",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyh4001h7ayguur7wfz0",
+      "questionId": "cmu8rpyh4001f7aygyeu93ilf",
+      "text": "Map",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyh4001i7aygkv9qqrr4",
+      "questionId": "cmu8rpyh4001f7aygyeu93ilf",
+      "text": "Set",
+      "isCorrect": true,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyh4001j7aygv40blpv7",
+      "questionId": "cmu8rpyh4001f7aygyeu93ilf",
+      "text": "Queue",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyhl001m7aygk68ps8ek",
+      "questionId": "cmu8rpyhl001l7ayg1v8un6jv",
+      "text": "Throws an error",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyhl001n7ayg6tln7vyw",
+      "questionId": "cmu8rpyhl001l7ayg1v8un6jv",
+      "text": "Keeps it until shutdown",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyhl001o7aygjhsxup5l",
+      "questionId": "cmu8rpyhl001l7ayg1v8un6jv",
+      "text": "Makes it eligible for garbage collection",
+      "isCorrect": true,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyhl001p7aygb8jnj0jh",
+      "questionId": "cmu8rpyhl001l7ayg1v8un6jv",
+      "text": "Copies it to the stack",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyi9001s7ayghhvb24i7",
+      "questionId": "cmu8rpyi9001r7ayg6fuu6j47",
+      "text": "protected",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyi9001t7aygevnrchqf",
+      "questionId": "cmu8rpyi9001r7ayg6fuu6j47",
+      "text": "public",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyi9001u7ayg74fo53uo",
+      "questionId": "cmu8rpyi9001r7ayg6fuu6j47",
+      "text": "package-private",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyi9001v7ayg0ioge6qo",
+      "questionId": "cmu8rpyi9001r7ayg6fuu6j47",
+      "text": "private",
+      "isCorrect": true,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyla00277ayggc7db9ch",
+      "questionId": "cmu8rpyl900267aygv3z8c08k",
+      "text": "The order effects run in",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyla00287aygfq7jko8y",
+      "questionId": "cmu8rpyl900267aygv3z8c08k",
+      "text": "When the effect re-runs",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyla00297aygxvsrfeyk",
+      "questionId": "cmu8rpyl900267aygv3z8c08k",
+      "text": "Which component owns the effect",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyla002a7aygmyezp8vo",
+      "questionId": "cmu8rpyl900267aygv3z8c08k",
+      "text": "Whether the effect is async",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpytm002d7aygrimsiuv6",
+      "questionId": "cmu8rpytm002c7aygvl38wdu7",
+      "text": "So React can match elements across renders",
+      "isCorrect": true,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpytm002e7aygztdxt7jw",
+      "questionId": "cmu8rpytm002c7aygvl38wdu7",
+      "text": "To improve SEO",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpytm002f7aygw7hstzn2",
+      "questionId": "cmu8rpytm002c7aygvl38wdu7",
+      "text": "They are required by TypeScript",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpytm002g7aygkohkv6jc",
+      "questionId": "cmu8rpytm002c7aygvl38wdu7",
+      "text": "To sort the list automatically",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyu8002j7aygkveiiu80",
+      "questionId": "cmu8rpyu8002i7ayge1z1gl9s",
+      "text": "It has a ref",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyu8002k7ayg8oese2hc",
+      "questionId": "cmu8rpyu8002i7ayge1z1gl9s",
+      "text": "It is inside a form element",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyu8002l7ayganhsv02u",
+      "questionId": "cmu8rpyu8002i7ayge1z1gl9s",
+      "text": "Its value comes from state",
+      "isCorrect": true,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyu8002m7ayg9nygdhmy",
+      "questionId": "cmu8rpyu8002i7ayge1z1gl9s",
+      "text": "It is marked required",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyup002p7ayg4c7b8gjt",
+      "questionId": "cmu8rpyup002o7ayg8fca06w4",
+      "text": "Mutable by the child",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyup002q7aygkt89as0p",
+      "questionId": "cmu8rpyup002o7ayg8fca06w4",
+      "text": "Read-only in the child",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyup002r7aygwvicqyy6",
+      "questionId": "cmu8rpyup002o7ayg8fca06w4",
+      "text": "Global",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyup002s7aygnln3zsun",
+      "questionId": "cmu8rpyup002o7ayg8fca06w4",
+      "text": "Always strings",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyxe00337ayg5xvxjiyh",
+      "questionId": "cmu8rpyxe00327aygr8sab6hq",
+      "text": "200 OK",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyxe00347aygmqwktaw8",
+      "questionId": "cmu8rpyxe00327aygr8sab6hq",
+      "text": "201 Created",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyxe00357ayguo1o56wn",
+      "questionId": "cmu8rpyxe00327aygr8sab6hq",
+      "text": "204 No Content",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyxe00367ayg74f3ij8j",
+      "questionId": "cmu8rpyxe00327aygr8sab6hq",
+      "text": "302 Found",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyxv00397aygb6oclzrk",
+      "questionId": "cmu8rpyxv00387aygtjfltjf4",
+      "text": "400 Bad Request",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyxv003a7aygqqda8mda",
+      "questionId": "cmu8rpyxv00387aygtjfltjf4",
+      "text": "404 Not Found",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyxv003b7aygkatd4kis",
+      "questionId": "cmu8rpyxv00387aygtjfltjf4",
+      "text": "422 Unprocessable Entity",
+      "isCorrect": true,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyxv003c7aygdmx9yjus",
+      "questionId": "cmu8rpyxv00387aygtjfltjf4",
+      "text": "500",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyyc003f7aygfsajbxdp",
+      "questionId": "cmu8rpyyc003e7aygmxyirthb",
+      "text": "/getUserOrders?id=7",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyyc003g7aygnv9vpkbp",
+      "questionId": "cmu8rpyyc003e7aygmxyirthb",
+      "text": "/users/7/orders",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyyc003h7ayg4gln73jn",
+      "questionId": "cmu8rpyyc003e7aygmxyirthb",
+      "text": "/orders/getByUser/7",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyyc003i7ayg6pkb7r98",
+      "questionId": "cmu8rpyyc003e7aygmxyirthb",
+      "text": "/api?action=orders&user=7",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpyyt003l7aygp0s4llz5",
+      "questionId": "cmu8rpyyt003k7aygkz32gr29",
+      "text": "The request is cached",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpyyt003m7ayg5ccgwurg",
+      "questionId": "cmu8rpyyt003k7aygkz32gr29",
+      "text": "Repeating it has the same effect as doing it once",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpyyt003n7aygxgimje0m",
+      "questionId": "cmu8rpyyt003k7aygkz32gr29",
+      "text": "It requires authentication",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpyyt003o7aygdayxayoh",
+      "questionId": "cmu8rpyyt003k7aygkz32gr29",
+      "text": "It returns JSON",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpz1d003z7ayg18aea9gn",
+      "questionId": "cmu8rpz1d003y7ayghxz8xowy",
+      "text": "Hash",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpz1d00407ayg1b3rjdgn",
+      "questionId": "cmu8rpz1d003y7ayghxz8xowy",
+      "text": "GIN",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpz1d00417aygft3titcj",
+      "questionId": "cmu8rpz1d003y7ayghxz8xowy",
+      "text": "B-tree",
+      "isCorrect": true,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpz1d00427aygde6ckm4q",
+      "questionId": "cmu8rpz1d003y7ayghxz8xowy",
+      "text": "BRIN",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpz1w00457ayg2rn9zyik",
+      "questionId": "cmu8rpz1w00447aygpykra6u3",
+      "text": "Actually runs the query",
+      "isCorrect": true,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpz1w00467aygja9zy0kb",
+      "questionId": "cmu8rpz1w00447aygpykra6u3",
+      "text": "Only works on SELECT",
+      "isCorrect": false,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpz1w00477ayggz3j3dey",
+      "questionId": "cmu8rpz1w00447aygpykra6u3",
+      "text": "Rewrites the query",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpz1w00487ayg1ec8wsuf",
+      "questionId": "cmu8rpz1w00447aygpykra6u3",
+      "text": "Requires superuser",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpz2e004b7aygslsgddw2",
+      "questionId": "cmu8rpz2e004a7aygxf52ersz",
+      "text": "Uniqueness",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpz2e004c7aygirh5uve3",
+      "questionId": "cmu8rpz2e004a7aygxf52ersz",
+      "text": "Referential integrity",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpz2e004d7aygtpawla6w",
+      "questionId": "cmu8rpz2e004a7aygxf52ersz",
+      "text": "Sort order",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpz2e004e7aygyjnq0izp",
+      "questionId": "cmu8rpz2e004a7aygxf52ersz",
+      "text": "Encryption",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpz56004o7aygcvmar7qx",
+      "questionId": "cmu8rpz56004n7ayg0z98twcz",
+      "text": "A running process",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpz56004p7aygdqrclorc",
+      "questionId": "cmu8rpz56004n7ayg0z98twcz",
+      "text": "A read-only template for containers",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpz56004q7ayghquqx2fo",
+      "questionId": "cmu8rpz56004n7ayg0z98twcz",
+      "text": "A virtual machine",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpz56004r7ayg3jy43jpm",
+      "questionId": "cmu8rpz56004n7ayg0z98twcz",
+      "text": "A network bridge",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpz5o004u7aygaqj1xw15",
+      "questionId": "cmu8rpz5o004t7aygye3ju5jc",
+      "text": "To reduce image size",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpz5o004v7aygceq9vpj7",
+      "questionId": "cmu8rpz5o004t7aygye3ju5jc",
+      "text": "To maximise layer cache reuse",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpz5o004w7aygadh5ezao",
+      "questionId": "cmu8rpz5o004t7aygye3ju5jc",
+      "text": "It is required syntax",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpz5o004x7aygpy7q0ub5",
+      "questionId": "cmu8rpz5o004t7aygye3ju5jc",
+      "text": "To speed up networking",
+      "isCorrect": false,
+      "orderIndex": 3
+    },
+    {
+      "id": "cmu8rpz6800507aygmhf8ud35",
+      "questionId": "cmu8rpz68004z7aygkx8vxt5z",
+      "text": "Builds a single image",
+      "isCorrect": false,
+      "orderIndex": 0
+    },
+    {
+      "id": "cmu8rpz6800517aygyoemi1ig",
+      "questionId": "cmu8rpz68004z7aygkx8vxt5z",
+      "text": "Starts the services defined in a compose file",
+      "isCorrect": true,
+      "orderIndex": 1
+    },
+    {
+      "id": "cmu8rpz6800527aygym52qo15",
+      "questionId": "cmu8rpz68004z7aygkx8vxt5z",
+      "text": "Pushes to a registry",
+      "isCorrect": false,
+      "orderIndex": 2
+    },
+    {
+      "id": "cmu8rpz6800537ayg2cwo77js",
+      "questionId": "cmu8rpz68004z7aygkx8vxt5z",
+      "text": "Prunes unused volumes",
+      "isCorrect": false,
+      "orderIndex": 3
+    }
+  ],
+  "assessmentAttempt": [
+    {
+      "id": "cmu8rpzd1005c7aygqylttfrz",
+      "assessmentId": "cmu8rpykp00247aygs2kkyauy",
+      "userId": "cmu81sy7500037aykave9voar",
+      "startedAt": "2026-09-19T19:16:11.461Z",
+      "submittedAt": "2026-09-19T19:16:11.460Z",
+      "score": 85,
+      "passed": true,
+      "autoSubmitted": false
+    },
+    {
+      "id": "cmu8rpzi4005s7aygg2jkoh67",
+      "assessmentId": "cmu8rpyfl00117aygdtbistx7",
+      "userId": "cmu81sy7500037aykave9voar",
+      "startedAt": "2026-09-19T19:16:11.644Z",
+      "submittedAt": "2026-09-19T19:16:11.643Z",
+      "score": 72,
+      "passed": true,
+      "autoSubmitted": false
+    }
+  ],
+  "attemptAnswer": [
+    {
+      "id": "cmu8rpzdu005e7aygyfiasz9c",
+      "attemptId": "cmu8rpzd1005c7aygqylttfrz",
+      "questionId": "cmu8rpyl900267aygv3z8c08k",
+      "selectedOptionId": "cmu8rpyla00287aygfq7jko8y",
+      "isCorrect": true
+    },
+    {
+      "id": "cmu8rpzeh005g7aygg1a65oj7",
+      "attemptId": "cmu8rpzd1005c7aygqylttfrz",
+      "questionId": "cmu8rpytm002c7aygvl38wdu7",
+      "selectedOptionId": "cmu8rpytm002d7aygrimsiuv6",
+      "isCorrect": true
+    },
+    {
+      "id": "cmu8rpzf2005i7aygqq3ns0ot",
+      "attemptId": "cmu8rpzd1005c7aygqylttfrz",
+      "questionId": "cmu8rpyu8002i7ayge1z1gl9s",
+      "selectedOptionId": "cmu8rpyu8002l7ayganhsv02u",
+      "isCorrect": true
+    },
+    {
+      "id": "cmu8rpzfn005k7ayg3yt59skq",
+      "attemptId": "cmu8rpzd1005c7aygqylttfrz",
+      "questionId": "cmu8rpyup002o7ayg8fca06w4",
+      "selectedOptionId": "cmu8rpyup002p7ayg4c7b8gjt",
+      "isCorrect": false
+    },
+    {
+      "id": "cmu8rpzj1005u7aygyvhsnbr4",
+      "attemptId": "cmu8rpzi4005s7aygg2jkoh67",
+      "questionId": "cmu8rpyg500137aygrs33u82d",
+      "selectedOptionId": "cmu8rpyg500147aygujasykjk",
+      "isCorrect": true
+    },
+    {
+      "id": "cmu8rpzjq005w7ayge240uwva",
+      "attemptId": "cmu8rpzi4005s7aygg2jkoh67",
+      "questionId": "cmu8rpygn00197aygire0ze3s",
+      "selectedOptionId": "cmu8rpygn001b7ayg8zyad9cc",
+      "isCorrect": true
+    },
+    {
+      "id": "cmu8rpzkf005y7aygwdkrlxi8",
+      "attemptId": "cmu8rpzi4005s7aygg2jkoh67",
+      "questionId": "cmu8rpyh4001f7aygyeu93ilf",
+      "selectedOptionId": "cmu8rpyh4001i7aygkv9qqrr4",
+      "isCorrect": true
+    },
+    {
+      "id": "cmu8rpzl800607ayge3z5gi0r",
+      "attemptId": "cmu8rpzi4005s7aygg2jkoh67",
+      "questionId": "cmu8rpyhl001l7ayg1v8un6jv",
+      "selectedOptionId": "cmu8rpyhl001o7aygjhsxup5l",
+      "isCorrect": true
+    },
+    {
+      "id": "cmu8rpzly00627aygyzxak059",
+      "attemptId": "cmu8rpzi4005s7aygg2jkoh67",
+      "questionId": "cmu8rpyi9001r7ayg6fuu6j47",
+      "selectedOptionId": "cmu8rpyi9001s7ayghhvb24i7",
+      "isCorrect": false
+    }
+  ],
+  "certificate": [
+    {
+      "id": "cmu8qllyz000n7ajojzmf5srl",
+      "certificateId": "SS-2026-4F8A-21D9",
+      "status": "ISSUED",
+      "holderId": "cmu81sy7500037aykave9voar",
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "issuerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "holderName": "Ananya Rao",
+      "trackName": "Full Stack Developer",
+      "issuerName": "Infosys Springboard",
+      "skillsJson": "[\"React\",\"Node.js\",\"REST APIs\",\"PostgreSQL\"]",
+      "score": 88,
+      "issuedAt": "2026-05-19T19:16:10.114Z",
+      "expiresAt": "2029-05-19T19:16:10.114Z",
+      "revokedAt": null,
+      "revokedReason": null,
+      "revokedById": null,
+      "signature": "t1K628oOwi1TjaWwQWmZiCogOp0SvMmZfJQSr8VYY5XC8v6Oys3Iu45h1rT8fPlJa34F1l6tNCp6DN4eD-yEBA",
+      "keyId": "dev-2026-01",
+      "onestStatus": "PUBLISHED",
+      "onestPublishedAt": "2026-05-19T19:16:10.114Z",
+      "onestError": null,
+      "createdAt": "2026-09-19T18:44:47.867Z",
+      "updatedAt": "2026-09-19T19:16:10.119Z"
+    },
+    {
+      "id": "cmu8qllzp000p7ajo9l2hxjng",
+      "certificateId": "SS-2023-7K2M-55XP",
+      "status": "ISSUED",
+      "holderId": "cmu81sy7500037aykave9voar",
+      "trackId": "cmu8qllxr000l7ajouj8ujwn4",
+      "issuerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "holderName": "Ananya Rao",
+      "trackName": "Cloud & DevOps Engineer",
+      "issuerName": "Infosys Springboard",
+      "skillsJson": "[\"Docker\",\"CI/CD\",\"Kubernetes\"]",
+      "score": 79,
+      "issuedAt": "2024-03-19T19:16:10.114Z",
+      "expiresAt": "2026-03-19T19:16:10.114Z",
+      "revokedAt": null,
+      "revokedReason": null,
+      "revokedById": null,
+      "signature": "8CJD5y69S5v9Ke4TnV2bMzYX-K4Bi8zKBjVOLzOwRaCnxUIqzvnndIG-mpZtFr15ni6MRj5rrFZK9omxJkBYAw",
+      "keyId": "dev-2026-01",
+      "onestStatus": "PUBLISHED",
+      "onestPublishedAt": "2024-03-19T19:16:10.114Z",
+      "onestError": null,
+      "createdAt": "2026-09-19T18:44:47.893Z",
+      "updatedAt": "2026-09-19T19:16:10.139Z"
+    },
+    {
+      "id": "cmu8qlm0h000r7ajo5sts9001",
+      "certificateId": "SS-2026-9QW3-4RT7",
+      "status": "REVOKED",
+      "holderId": "cmu81sy7500037aykave9voar",
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "issuerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "holderName": "Ananya Rao",
+      "trackName": "Full Stack Developer",
+      "issuerName": "Infosys Springboard",
+      "skillsJson": "[\"React\",\"Node.js\",\"REST APIs\",\"PostgreSQL\"]",
+      "score": 72,
+      "issuedAt": "2026-01-19T19:16:10.114Z",
+      "expiresAt": "2029-01-19T19:16:10.114Z",
+      "revokedAt": "2026-07-19T19:16:10.114Z",
+      "revokedReason": "Issued in error — assessment result was later invalidated.",
+      "revokedById": null,
+      "signature": "v6qVWUVNL0n2PkBDntsulB07ybOtIIXfCQZauWyUW26o4orG_z-p5afe1SQHddPGnwnJ_O91_-Ex3JbpsL2LBQ",
+      "keyId": "dev-2026-01",
+      "onestStatus": "PUBLISHED",
+      "onestPublishedAt": "2026-01-19T19:16:10.114Z",
+      "onestError": null,
+      "createdAt": "2026-09-19T18:44:47.922Z",
+      "updatedAt": "2026-09-19T19:16:10.159Z"
+    },
+    {
+      "id": "cmu8qlm14000t7ajonjpjttqj",
+      "certificateId": "SS-2026-TMP1-8VZ2",
+      "status": "ISSUED",
+      "holderId": "cmu81sy7500037aykave9voar",
+      "trackId": "cmu8qllwf000j7ajo878wl1rc",
+      "issuerOrgId": "cmu81sy5f00007aykdxr8cfb3",
+      "holderName": "Ananya Rao",
+      "trackName": "Full Stack Developer",
+      "issuerName": "Infosys Springboard",
+      "skillsJson": "[\"React\",\"Node.js\",\"REST APIs\",\"PostgreSQL\",\"Kubernetes\"]",
+      "score": 95,
+      "issuedAt": "2026-06-19T19:16:10.114Z",
+      "expiresAt": "2029-06-19T19:16:10.114Z",
+      "revokedAt": null,
+      "revokedReason": null,
+      "revokedById": null,
+      "signature": "D0PIEIBMoL5UlXXq-yXMFjDUS6K7r-wiwTbTm_v0uaRvPzG8ZhylTdGXyKgYe5naCZECzYMcj141QdYx87IkCA",
+      "keyId": "dev-2026-01",
+      "onestStatus": "PUBLISHED",
+      "onestPublishedAt": "2026-06-19T19:16:10.114Z",
+      "onestError": null,
+      "createdAt": "2026-09-19T18:44:47.944Z",
+      "updatedAt": "2026-09-19T19:16:10.176Z"
+    }
+  ],
+  "notification": [
+    {
+      "id": "cmu8rpzoy00697aygxbudqrvo",
+      "userId": "cmu81sy7500037aykave9voar",
+      "type": "CERTIFICATE",
+      "title": "Certificate issued",
+      "body": "Your Full Stack Developer certificate is ready to download and share.",
+      "link": "/student/certificates/SS-2026-4F8A-21D9",
+      "readAt": null,
+      "createdAt": "2026-09-19T19:16:11.890Z"
+    },
+    {
+      "id": "cmu8rpzoy006a7aygycfnjwwg",
+      "userId": "cmu81sy7500037aykave9voar",
+      "type": "RESULT",
+      "title": "Assessment passed",
+      "body": "You scored 85% on React Fundamentals — well above the 60% pass mark.",
+      "link": "/student/courses",
+      "readAt": null,
+      "createdAt": "2026-09-19T19:16:11.890Z"
+    },
+    {
+      "id": "cmu8rpzoy006b7aygnp4931l0",
+      "userId": "cmu81sy7500037aykave9voar",
+      "type": "ELIGIBILITY",
+      "title": "You are close to a certification",
+      "body": "Finish PostgreSQL Essentials to become eligible for the Full Stack Developer track.",
+      "link": "/student/certifications",
+      "readAt": "2026-09-19T19:16:11.889Z",
+      "createdAt": "2026-09-19T19:16:11.890Z"
+    },
+    {
+      "id": "cmu8rpzoy006c7aygot4ezd2b",
+      "userId": "cmu81sy7500037aykave9voar",
+      "type": "ENROLLMENT",
+      "title": "Enrolled in Docker for Developers",
+      "body": "Your seat is confirmed. The first module is ready when you are.",
+      "link": "/student/courses",
+      "readAt": "2026-09-19T19:16:11.889Z",
+      "createdAt": "2026-09-19T19:16:11.890Z"
+    }
+  ]
+}

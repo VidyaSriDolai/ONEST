@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1e1b4b" />
+
+    <!--
+      Baseline metadata lives in the HTML shell so crawlers and link unfurlers
+      get a complete document without executing JavaScript.
+
+      React 19 hoists a route's <meta> tags into <head> but does NOT replace
+      matching static ones, so these would otherwise sit alongside the route's
+      own values (two `robots`, two `canonical`). Every tag a route overrides is
+      therefore marked `data-seo-default`, and the <Seo> component removes those
+      once it has rendered the real values. Tags that are identical on every
+      page (og:type, og:site_name, twitter:site) are not marked and simply stay.
+    -->
+    <title>SkillSeal — Verifiable corporate certifications on ONEST</title>
+    <meta
+      data-seo-default
+      name="description"
+      content="An ONEST-compliant certification platform for corporate training providers. Enroll learners, run assessments, issue tamper-evident certificates, and let any employer verify them in seconds."
+    />
+    <link data-seo-default rel="canonical" href="https://skillseal.example.org/" />
+    <meta data-seo-default name="robots" content="index, follow, max-image-preview:large" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SkillSeal" />
+    <meta
+      data-seo-default
+      property="og:title"
+      content="SkillSeal — Verifiable corporate certifications on ONEST"
+    />
+    <meta
+      data-seo-default
+      property="og:description"
+      content="Issue industry-recognised certifications that any employer can verify in seconds. Built on the ONEST open network."
+    />
+    <meta data-seo-default property="og:url" content="https://skillseal.example.org/" />
+    <meta data-seo-default property="og:image" content="https://skillseal.example.org/og-image.png" />
+    <meta property="og:image:alt" content="SkillSeal certificate verification" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@skillseal" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Organization data, so search engines can build a knowledge panel. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SkillSeal",
+        "legalName": "SkillSeal Certification Network",
+        "url": "https://skillseal.example.org",
+        "description": "ONEST-compliant certification platform for corporate training programs."
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Visible to crawlers and to anyone with JavaScript disabled. -->
+    <noscript>
+      <div style="padding: 2rem; font-family: system-ui, sans-serif; max-width: 42rem; margin: 0 auto">
+        <h1>SkillSeal</h1>
+        <p>
+          SkillSeal issues verifiable, industry-recognised certifications for corporate training
+          programs and lets any employer confirm them in seconds through the ONEST open network.
+        </p>
+        <p>This application needs JavaScript enabled to run. Please enable it and reload.</p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

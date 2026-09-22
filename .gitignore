@@ -31,3 +31,7 @@ pnpm-debug.log*
 
 # Test artifacts
 **/.cache/
+
+# Local databases
+*.db
+*.db-journal
