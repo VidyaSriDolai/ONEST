@@ -46,7 +46,7 @@ function VerifyBox() {
   }
 
   return (
-    <div className="rounded-2xl bg-white/95 p-5 shadow-lifted ring-1 ring-white/60 backdrop-blur sm:p-6">
+    <div className="palette-light rounded-2xl bg-white/95 p-5 shadow-lifted ring-1 ring-white/60 backdrop-blur sm:p-6">
       <div className="flex items-center gap-2">
         <ShieldCheck className="size-5 text-brand-600" aria-hidden="true" />
         <h2 className="font-display text-base font-bold text-ink-900">Verify a certificate</h2>
@@ -88,7 +88,7 @@ function VerifyBox() {
               key={sample.id}
               type="button"
               onClick={() => navigate('/verify/' + sample.id)}
-              className="rounded-lg bg-ink-100 px-2.5 py-1 font-mono text-[11px] font-medium text-ink-700 transition hover:bg-brand-50 hover:text-brand-700"
+              className="rounded-lg bg-ink-200/70 px-2.5 py-1 font-mono text-[11px] font-medium text-ink-700 ring-1 ring-inset ring-ink-300/60 transition hover:bg-brand-50 hover:text-brand-700 hover:ring-brand-200"
               title={sample.label + ' certificate'}
             >
               {sample.id}
